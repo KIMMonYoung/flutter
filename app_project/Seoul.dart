@@ -5,10 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class OpenWebBrowser extends StatefulWidget {
   @override
-  OpenWebBrowserState createState() {
-    pageState = OpenWebBrowserState();
-    return pageState;
-  }
+  OpenWebBrowserState createState() => OpenWebBrowserState();
 }
 
 class OpenWebBrowserState extends State<OpenWebBrowser> {
@@ -59,8 +56,10 @@ class OpenWebBrowserState extends State<OpenWebBrowser> {
                     width: 60,
                     child: TextButton(
                       padding: const EdgeInsets.all(0),
-                      color: Colors.blueGrey,
-                      textColor: Colors.white,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.lightBlueAccent),
+                        foregroundColor: MaterialStateProperty.all(Colors.white),
+                      ),
                       child: Text("lauch"),
                       onPressed: () {
                         _launchUrl(teCon.text.toString());
